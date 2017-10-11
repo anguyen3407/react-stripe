@@ -1,8 +1,8 @@
 const express = require('express')
     , bodyParser = require('body-parser')
     , cors = require('cors')
-    , config =  require('./config')
-    , stripe = require('stripe')(config.secret_key)
+    // , config =  require('./config')
+    , stripe = require('stripe')('sk_test_nJIKYXKLVHBFK8QmfdDak42R')
     , app =  module.exports = express();
 
 app.use(bodyParser.json());
@@ -47,5 +47,5 @@ app.post('/api/payment', function(req, res, next){
 });
 
 
-app.listen(config.PORT, () => {
-  console.log('Listening to port: ', config.PORT)});
+app.listen(3535, () => {
+  console.log('Listening to port: ', 3535)});

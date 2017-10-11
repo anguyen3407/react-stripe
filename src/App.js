@@ -6,10 +6,10 @@ import stripe from './stripeKey';
 import axios from 'axios';
 
 class App extends Component {
-  onToken = (token) => {
+  onToken(token) {
     token.card = void 0;
     console.log('token', token);
-    axios.post('http://localhost:3535/api/payment', { token, amount: 100 } ).then(response => {
+    axios.post('http://localhost:3535/api/payment', { token, amount: 100} ).then(response => {
       alert('we are in business')
     });
   }
@@ -23,8 +23,8 @@ class App extends Component {
         </div>
         <StripeCheckout
           token={this.onToken}
-          stripeKey={ stripe.pub_key }
-          amount={1000}
+          stripeKey={ stripe }
+          amount={.00}
         />
       </div>
     );
